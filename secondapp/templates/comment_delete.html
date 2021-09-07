@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <title>댓글 - delete</title>
+     <!-- Bootstrap core CSS -->
+    <link href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+    <!-- Additional CSS Files -->
+    <link rel="stylesheet" href="{% static 'assets/css/fontawesome.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/templatemo-grad-school.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/owl.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/lightbox.css' %}">
+
+
+    <style>
+   .detailbanner {
+    padding-top: 10%;
+    padding-bottom: 2%;
+    text-align: center;
+    background-color: white;
+    color: white;
+}
+
+@font-face {
+font-family: 'BMHANNAPro';
+src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_seven@1.0/BMHANNAPro.woff') format('woff');
+font-weight: normal;
+font-style: normal;
+}
+#postheader {
+    background-color : white;
+    }
+#postul a {
+    color:black;
+}
+
+#postsubul  a:hover{
+    color: red;
+    font-weight: 600;
+    margin-top : 0;
+}
+
+body {
+    margin-top:10% ;
+    }
+.postbanner {
+    padding-bottom: 5%;
+    text-align: center;
+}
+.deleteD {
+    width: 500px;
+    margin: 15% auto;
+    text-align: center;
+}
+.deleteD h2 {
+    font-family: 'BMHANNAPro';
+}
+    </style>
+</head>
+
+<body>
+
+<div class="deleteD">
+    <form action="/secondapp/comment/delete/{{ comment.id }}" method="post" style="width: 250px; margin: 40px auto;">
+        {% csrf_token %}
+        <h2>{{ comment.author }}</h2>
+        <p>{{ comment.content }}</p>
+        <h2 style="color:#dc3545;">삭제 하시겠습니까?</h2>
+        <div class="form-group row">
+            <label for="inputpassword" class="col-sm-2 col-form-label" style="text-align:right;"><strong>PW:</strong></label>
+            <div class="col-sm-10">
+                <input type="text" name="password" class="form-control" id="inputpassword" value="{{ comment.password }}">
+            </div>
+        </div>
+        <input style="color: #ffffff; background-color: #dc3545; border: none;" class="btn btn-danger" type="submit" role="button" value="삭제">
+    </form>
+
+</div>
+
+
+</body>
+
+</html>

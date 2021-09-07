@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+{% load static %}
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+
+    <title>대외 활동</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="{% static 'vendorY/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+
+    <link rel="stylesheet" href="{% static '/assetsY/css/main.css' %}" />
+    <!--[if lte IE 8]><script src="{% static '/assetsY/js/ie/html5shiv.js' %}"></script><![endif]-->
+	<!--[if lte IE 9]><link rel="stylesheet" href="{% static '/assetsY/css/ie9.css' %}" /><![endif]-->
+	<!--[if lte IE 8]><link rel="stylesheet" href="{% static '/assetsY/css/ie8.css' %}" /><![endif]-->
+
+	<link rel="stylesheet" href="{% static 'assets/css/fontawesome.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/templatemo-grad-school.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/owl.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/lightbox.css' %}">
+
+<style>
+@font-face {
+    font-family: 'MapoFlowerIsland';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/MapoFlowerIslandA.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'BMHANNAAir';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_four@1.0/BMHANNAAir.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+font-family: 'BMHANNAPro';
+src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_seven@1.0/BMHANNAPro.woff') format('woff');
+font-weight: normal;
+font-style: normal;
+}
+
+@font-face {
+    font-family: 'Wemakeprice-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-10-21@1.0/Wemakeprice-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* 내용보기 버튼 */
+.showbutton {
+	color: #dc3545!important;
+    line-height: 1;
+    font-size: 14px;
+    height: 30px;
+    box-shadow: 2px 2px 2px #11151a ;
+    border: 1px solid #4950571a;
+    margin: 30px 10px 20px 20px;
+}
+
+.showbutton:hover {
+    color: #ffffff!important;
+    line-height: 1;
+    font-size: 14px;
+    height: 30px;
+    box-shadow: 2px 2px 3px 0px #11151a;
+    background-color: #dc3545;
+  	margin: 30px 10px 20px 20px;
+}
+.showbutton: visited {
+    border-color:none;
+}
+.hidebutton {
+	color: #10bbd6!important;
+    line-height: 1;
+    font-size: 14px;
+    height: 30px;
+    box-shadow: 2px 2px 3px 0px #11151a;
+    border: 1px solid #4950571a;
+    margin: 30px 10px 20px 10px;
+}
+
+.hidebutton:hover{
+	color: #ffffff!important;
+    line-height: 1;
+    font-size: 14px;
+    height: 30px;
+    box-shadow: 2px 2px 3px 0px #11151a;
+    background-color: #10bbd6;
+  	margin: 30px 10px 20px 10px;
+}
+
+.hidebutton:visited{
+	border-color : none;
+}
+.activitybanner {
+    padding-top: 10%;
+    padding-bottom: 2%;
+    border-bottom: 2px solid #11151a;
+    text-align: center;
+    background-color: #11151a;
+    color: white;
+    box-shadow: 2px 2px 3px 6px #11151a;
+}
+
+.tiles article:hover .cover {
+	opacity:0;
+}
+
+.cover p {
+	font-size: 17px;
+    font-weight: 550;
+    font-family: 'BMHANNAAir';
+}
+
+</style>
+  </head>
+
+<body>
+
+ <!--header-->
+  <header class="main-header clearfix" role="header" data-scroll>
+    <div class="logo">
+      <a href="{% url 'index' %}"><img src ="{% static 'assets/images/logoC2.png' %}"  style="width:25%;     margin-top: 21.5px;"></a>
+    </div>
+    <a href="#menu" class="menu-link"><i class="fa fa-bars"></i></a>
+    <nav id="menu" class="main-nav" role="navigation">
+      <ul class="main-menu">
+        <li><a href="{% url 'index' %}">Home</a></li>
+        <li><a href="{% url 'hire' %}">채용공고</a></li>
+        <li class="has-submenu"><a href="{% url 'activity' %}">대외활동</a>
+          <ul class="sub-menu">
+            <li><a href="{% url 'activity' %}">대외활동</a></li>
+            <li><a href="{% url 'studyroom' %}" class="external" >스터디모임</a></li>
+          </ul>
+        </li>
+        <li><a href="{% url 'about' %}">About Us</a></li>
+
+      </ul>
+    </nav>
+  </header>
+
+  <br>
+<!--각 페이지 배너 -->
+<div class="activitybanner">
+   <img src = "{% static 'assetsY/images/Ac.png' %}" width="500px">
+</div>
+
+
+<!--포스터 부분-->
+   <div id="main">
+	<div class="container">
+		<header>
+			<br>
+			<br>
+			<br>
+			<hr>
+			<h1>공모전</h1>
+
+			<em> &nbsp; 찾았다 공모전! 현재 진행 중인 공모전 한 번에 모아보기</em>
+			<br>
+			<button class="showbutton" onclick = "onDisplay()" style="font-family: 'BMHANNAPro'; font-weight:100;"> 공모전 보기</button>
+			<button class="hidebutton" onclick = "offDisplay()" style="font-family: 'BMHANNAPro'; font-weight:100;" >접기</button>
+		</header>
+
+		<section id="noneDiv" class="tiles"   >
+			<article class="style1">
+				<span class="image" >
+					<img src="{% static 'assetsY/images/pic01.jpg' %}" style="width: 300px; height: 300px;" alt="" />
+				</span>
+				<a href="https://www.culture.go.kr/metacontest/main.do">
+				<div class="cover">
+					<h2>한국 문화체험 <br>메타버스 콘텐츠<br> 공모전</h2>
+					<p style="color:#11151a;">2021. 07. 12 ~ 2021. 09. 17</p>
+					<p>' 메타버스에서 한국 문화를 경험하고 <br> 그 가치를 알리는 콘텐츠 기획 '</p>
+				</div>
+					<div class="content">
+					</div>
+				</a>
+			</article>
+			<article class="style1">
+				<span class="image">
+					<img src="{% static 'assetsY/images/pic02.png' %}" style="width: 300px; height: 300px;" alt="" />
+				</span>
+				<a href="https://arko.or.kr/board/view/4053?bid=&page=&cid=1803181">
+					<div class="cover">
+						<h2>예술데이터가 바꾸는 <br> 세상 챌린지</h2>
+						<p style="color:#11151a;" >2021. 07. 21 ~ 2021. 08. 22</p>
+						<p>' 문화예술 분야의 빅데이터를 활용한 <br>기획 아이디어 '</p>
+					</div>
+					<div class="content">
+					</div>
+				</a>
+			</article>
+			<article class="style3">
+				<span class="image">
+					<img src="{% static 'assetsY/images/pic03.png' %}" style="width: 300px; height: 300px;" alt="" />
+				</span>
+				<a href="https://www.water.or.kr/infomation/publication/publicSubscriptionInfo.do?seq=1953&p_group_seq=1846&menu_mode=2#">
+					<div class="cover">
+						<h2>K-water<br> 물 빅데이터 공모전 </h2>
+						<p style="color:#11151a;" >2021. 06. 24 ~ 2021. 08. 31</p>
+						<p>'물 데이터와 4차산업기술(빅데이터·AI)의 <br>융합을 통한 인사이트 창출 (자유주제)'</p>
+					</div>
+					<div class="content">
+					</div>
+				</a>
+			</article>
+			<article class="style5">
+				<span class="image">
+					<img src="{% static '/assetsY/images/pic04.jpg' %}" style="width: 300px; height: 300px;" alt="" />
+				</span>
+				<a href="https://www.onoffmix.com/event/241932">
+					<div class="cover">
+					<h2>2021 <br>뉴스빅데이터 해커톤</h2>
+					<p style="color:#11151a;" >2021. 09. 27 ~ 2021. 10. 14</p>
+					<p>'뉴스빅데이터를 활용한<br> 사업 모델 및 공공서비스 발굴 공모전'</p>
+					</div>
+					<div class="content">
+					</div>
+				</a>
+			</article>
+			<article class="style5">
+				<span class="image">
+					<img src="{% static '/assetsY/images/pic05.jpg' %}" style="width: 300px; height: 300px;" alt="" />
+				</span>
+				<a href="https://www.bigcontest.or.kr/points/content.php">
+					<div class="cover">
+					<h2>2021 빅콘테스트</h2>
+					<p style="color:#11151a;" >2021. 07. 26 ~ 2021. 08. 20</p>
+					<p>'빅데이터 분석 경진 대회'</p>
+					</div>
+					<div class="content">
+					</div>
+				</a>
+			</article>
+			<article class="style6">
+				<span class="image">
+					<img src="{% static '/assetsY/images/PIC06.jpg' %}"  style="width: 300px; height: 300px;" alt="" />
+				</span>
+				<a href="http://www.ictfestival.or.kr/">
+					<div class="cover">
+					<h2>2021 제 8회<br> 전국 ICT 융합 공모전</h2>
+					<p style="color:#11151a;" >~ 2021. 09. 05</p>
+					<p>'2021년 ICT 전 산업분야에 <br>융합, 디지털분야 산업 발전방안 모색,<br> 사업 모델 아이디어 발굴'</p>
+					</div>
+					<div class="content">
+					</div>
+				</a>
+			</article>
+			<article class="style5">
+				<span class="image">
+					<img src="{% static '/assetsY/images/PIC07.jpg' %}" style="width: 300px; height: 300px;" alt="" />
+				</span>
+				<a href="https://www.findatacontest2021.com/">
+					<div class="cover">
+					<h2>2021<br> 금융데이터 경진대회</h2>
+					<p style="color:#11151a;" >2021. 07. 20 ~ 2021. 09. 16</p>
+					<p>'금융 데이터 활용 활성화 도모 및 금융데이터를 활용한 다양한 아이디어 공모'</p>
+					</div>
+					<div class="content">
+					</div>
+				</a>
+			</article>
+			<article class="style3">
+				<span class="image">
+					<img src="{% static '/assetsY/images/PIC08.jpg' %}" style="width: 300px; height: 300px;" alt="" />
+				</span>
+				<a href="https://www.data4library.kr/noticeV?cn=157">
+					<div class="cover">
+					<h2>2021 도서관 <br>빅데이터 공모전</h2>
+					<p style="color:#11151a;" >2021. 06. 17 ~ 2021. 08. 16</p>
+					<p>'도서관 데이터 분석, 활용' <br> '빅데이터 서비스 및 활용 아이디어' <br> '도서관 데이터와 공공데이터를 활용한<br> 사회 이슈 분석 및 발굴'</p>
+					</div>
+					<div class="content">
+					</div>
+				</a>
+			</article>
+			<article class="style3">
+				<span class="image">
+					<img src="{% static '/assetsY/images/PIC09.jpg' %}" style="width: 300px; height: 300px;" alt="" />
+				</span>
+				<a href="https://www.changwon.go.kr/sotong/contest/view.do?mId=0104000000">
+					<div class="cover">
+					<h2>2021 창원<br> 빅데이터 공모전</h2>
+					<p style="color:#11151a;" >2021. 07. 01 ~ 2021. 09. 30</p>
+						<P>'대학생 및 대학원 생 참여 가능'</P>
+					</div>
+					<div class="content">
+					</div>
+				</a>
+			</article>
+			<article class="style2">
+				<span class="image">
+					<img src="{% static '/assetsY/images/PIC10.jpg' %}" style="width: 300px; height: 300px;" alt="" />
+				</span>
+				<a href="https://foodsafetykorea.go.kr/portal/board/boardDetail.do?&menu_no=2914&menu_grp=MENU_NEW07&ntctxt_no=1084749&bbs_no=NOTICE01">
+					<div class="cover">
+						<h2>2021 식품안전나라 <br>공공데이터 활용 <br>아이디어 공모전</h2>
+						<p style="color:#11151a;" >2021. 07. 19 ~ 2021. 10. 03</p>
+						<P>'식품안전나라 공공데이터와 접목 가능한 다른 분야 서비스 및 공공데이터의 융복합을 통한 식품안전 분야 신규 서비스 기획 및 아이디어 발굴'</P>
+					</div>
+					<div class="content">
+					</div>
+				</a>
+			</article>
+			<article class="style6">
+				<span class="image">
+					<img src="{% static '/assetsY/images/PIC11.jpg' %}" style="width: 300px; height: 300px;" alt="" />
+				</span>
+				<a href="http://www.busanit.or.kr/board/view.asp?bidx=11488&bcode=notice&ipage=1&sword=&search_txt=">
+					<div class="cover">
+					<h2>2021년 <br>클라우드 비즈니스 <br>아이디어 공모전</h2>
+					<p style="color:#11151a;" >2021. 07. 12 ~ 2021. 08. 25</p>
+					<p>'입사지원시 서류생략 후, 면접 기회 제공 <br> IT관련 전공자 및 관련 자격증 보유자는 <br>개발직 인턴 채용기회 제공'</p>
+					</div>
+					<div class="content">
+					</div>
+				</a>
+			</article>
+			<article class="style2">
+				<span class="image">
+					<img src="{% static '/assetsY/images/PIC12.jpg' %}" style="width: 300px; height: 300px;" alt="" />
+				</span>
+				<a href="https://www.osan.go.kr/portal/saeol/gosi/view.do?notAncmtMgtNo=35208&mId=0302010000">
+					<div class="cover">
+					<h2>2021 오산시<br> 데이터 분석 공모전</h2>
+					<p style="color:#11151a;" >2021. 07. 05. ~ 2021. 09. 15</p>
+					<p>'개방된 데이터 또는 민간 데이터 활용하여 오산시의 생활불편 해결 및 공공 이익·발전에 기여할 수 있는 자유주제'</p>
+					</div>
+					<div class="content">
+					</div>
+				</a>
+			</article>
+		</section>
+		<br>
+		<!--포스터 end-->
+
+
+		<!--게시판 부분-->
+
+		<hr>
+		<h1>팀원 모집 중</h1>
+		<br>
+
+
+		<div class="container">
+    <table class="table">
+        <thead class="thead-light">
+        <tr class="text-center" style="margin-bottom:4px;" >
+            <th scope="col" style = " color: #ffffff; background-color: #dc3545; border-color: #ffffff; text-align: center;">#</th>
+            <th scope="col" style = " color: #ffffff; background-color: #dc3545; border-color: #ffffff; text-align: center;">제목</th>
+            <th scope="col" style = " color: #ffffff; background-color: #dc3545; border-color: #ffffff; text-align: center;">작성자</th>
+            <th scope="col" style = " color: #ffffff; background-color: #dc3545; border-color: #ffffff; text-align: center;">작성일</th>
+        </tr>
+        </thead>
+        <tbody >
+        {% for board in boards %}
+        <tr class="text-center">
+         <th scope="row" style="text-align:center;">
+            <a href="/secondapp/post/{{ board.id }}">
+                   <span>{{ forloop.counter }}</span>
+            </a>
+            </th>
+            <td>
+                <a href="/secondapp/post/{{ board.id }}">
+                    <span style="color : #11151a; font-weight: 500;" >{{ board.title }}</span>
+                </a>
+            </td>
+            <td>
+                <span>{{ board.author }}</span>
+            </td>
+            <td>
+                <span>{{ board.created_date | date:"Y-m-d h:i" }}</span>
+            </td>
+        </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    <div class="row">
+        <div class="col-auto mr-auto"></div>
+        <div class="col-auto">
+            <a  style="color: #fff; background-color: #dc3545; border-color: #f7f7f7; font-family: 'BMHANNAPro'; font-weight:100;" class="btn btn-primary" href="/secondapp/post/" role="button">글쓰기</a>
+        </div>
+    </div>
+	</div>
+  <!-- 게시판 end -->
+
+
+  <!-- Scripts -->
+  <!-- Bootstrap core JavaScript -->
+    <script src="{% static 'vendor/jquery/jquery.min.js' %}"></script>
+    <script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+    <script src="{% static 'assets/js/isotope.min.js' %}"></script>
+    <script src="{% static 'assets/js/owl-carousel.js' %}"></script>
+    <script src="{% static 'assets/js/lightbox.js' %}"></script>
+    <script src="{% static 'assets/js/tabs.js' %}"></script>
+    <script src="{% static 'assets/js/video.js' %}"></script>
+    <script src="{% static 'assets/js/slick-slider.js' %}"></script>
+    <script src="{% static 'assets/js/custom.js' %}"></script>
+
+	<script src="{% static 'assetsY/js/jquery.min.js' %}"></script>
+	<script src="{% static 'assetsY/js/skel.min.js' %}"></script>
+	<script src="{% static 'assetsY/js/util.js' %}"></script>
+	<script>
+		function onDisplay() {
+			$('#noneDiv').show();
+		}
+		function offDisplay() {
+			$('#noneDiv').hide();
+		}
+	</script>
+
+    </script>
+        </div>
+      </div>
+    </div>
+  </section>
+</body>
+  <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+             <p><i class="fa fa-copyright"></i> Copyright 2021 by BIGTOPIA | <a href="#" rel="sponsored" target="_parent">DAECHWITA</a></p>
+        </div>
+      </div>
+    </div>
+  </footer>
+</html>

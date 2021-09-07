@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <title>게시판 - delete</title>
+     <!-- Bootstrap core CSS -->
+    <link href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+    <!-- Additional CSS Files -->
+    <link rel="stylesheet" href="{% static 'assets/css/fontawesome.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/templatemo-grad-school.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/owl.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/lightbox.css' %}">
+
+
+    <style>
+   .detailbanner {
+    padding-top: 10%;
+    padding-bottom: 2%;
+    text-align: center;
+    background-color: white;
+    color: white;
+}
+
+@font-face {
+font-family: 'BMHANNAPro';
+src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_seven@1.0/BMHANNAPro.woff') format('woff');
+font-weight: normal;
+font-style: normal;
+}
+#postheader {
+    background-color : white;
+    }
+#postul a {
+    color:black;
+}
+
+#postsubul  a:hover{
+    color: red;
+    font-weight: 600;
+    margin-top : 0;
+}
+
+body {
+    margin-top:10% ;
+    }
+.postbanner {
+    padding-bottom: 5%;
+    text-align: center;
+}
+.deleteD {
+    width: 500px;
+    margin: 15% auto;
+    text-align: center;
+}
+.deleteD h2 {
+    font-family: 'BMHANNAPro';
+}
+    </style>
+</head>
+ <header id = "postheader" class="main-header clearfix" role="header" data-scroll>
+    <div class="logo">
+      <a href="{% url 'index' %}"><img src ="{% static 'assets/images/logo4.png' %}"  style="width:25%"></a>
+    </div>
+    <a href="#menu" class="menu-link"><i class="fa fa-bars"></i></a>
+    <nav id="menu" class="main-nav" role="navigation">
+      <ul id = "postul" class="main-menu" >
+        <li><a href="{% url 'index' %}">Home</a></li>
+        <li><a href="{% url 'hire' %}">채용공고</a></li>
+        <li class="has-submenu"><a href="{% url 'activity' %}">대외활동</a>
+          <ul id = "postsubul" class="sub-menu">
+            <li style="margin-bottm:0;"><a href="{% url 'activity' %}">대외활동</a></li>
+            <li><a href="{% url 'studyroom' %}" class="external" >스터디모임</a></li>
+          </ul>
+        </li>
+        <li><a href="{% url 'about' %}">About Us</a></li>
+
+      </ul>
+    </nav>
+  </header>
+
+<body>
+<div class="deleteD">
+    <h2>비밀번호가 올바르지 않습니다. 다시 확인해주세요.</h2>
+    <hr>
+    <a style = "font-family: 'BMHANNAPro'; color: #dc3545;font-size: 25px; " class="btn" href="/secondapp/activity/">돌아가기</a>
+</div>
+</body>
+</html>

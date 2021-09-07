@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+  <head>
+    <title>스터디모임</title>
+
+    <!-- main Bootstrap core CSS -->
+    <link href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+    <!-- main CSS Files -->
+    <link rel="stylesheet" href="{% static 'assets/css/fontawesome.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/templatemo-grad-school.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/owl.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/lightbox.css' %}">
+
+    <!-- studyroom Files -->
+    <link rel="stylesheet" href="{% static 'assetsX/css/fontawesome.css' %}">
+    <link rel="stylesheet" href="{% static 'assetsX/css/tooplate-main.css' %}">
+    <link rel="stylesheet" href="{% static 'assetsX/css/owl.css' %}">
+    <link href="{% static 'vendorX/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+
+    <!--main link안내menu-->
+    <link rel="stylesheet" type="text/css" href="{% static 'assetsH/css/normalize.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'assetsH/css/demo.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'assetsH/css/style-ama.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'assetsH/pater/pater.css' %}" />
+
+<style>
+.nanumsquare {
+    font-family: 'NanumSquare', sans-serif !important;
+}
+@font-face {
+    font-family: 'MapoFlowerIsland';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/MapoFlowerIslandA.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+  font-family: 'BMHANNAPro';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_seven@1.0/BMHANNAPro.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+    }
+    .section-heading .line-dec {
+        width: 30px;
+        height: 5px;
+        background-color: #ff6747;
+    }
+    .featured-item h6 {
+        color: #dc3545;
+        font-size: 15px;
+        font-weight: 700;
+        margin-bottom: 0px;
+    }
+    #multicampus{
+        text-align : center;
+        font-family: 'BMJUA';
+    }
+    .table-light, .table-light>td, .table-light>th {
+         background-color: #ff6747;
+    }
+    form {
+  width: 500px;
+}
+table {
+  border-collapse:collapse;
+  margin-bottom: 10px;
+}
+th, td {
+  padding: 3px 10px;
+}
+.off-screen {
+  display: none;
+}
+#nav {
+  width: 500px;
+  text-align: center;
+}
+#nav a {
+  display: inline-block;
+  padding: 3px 5px;
+  margin-right: 10px;
+  font-family:Tahoma;
+  background: #ccc;
+  color: #000;
+  text-decoration: none;
+}
+#nav a.active {
+  background: #333;
+  color: #fff;
+}
+.wrap {position: absolute;left: 0;bottom: 40px;width: 288px;height: 132px;margin-left: -144px;text-align: left;overflow: hidden;font-size: 12px;font-family: 'Malgun Gothic', dotum, '돋움', sans-serif;line-height: 1.5;}
+    .wrap * {padding: 0;margin: 0;}
+    .wrap .info {width: 286px;height: 120px;border-radius: 5px;border-bottom: 2px solid #ccc;border-right: 1px solid #ccc;overflow: hidden;background: #fff;}
+    .wrap .info:nth-child(1) {border: 0;box-shadow: 0px 1px 2px #888;}
+    .info .title {padding: 5px 0 0 10px;
+    /* height: 30px; */
+    background: rgb(0 123 255 / 15%);
+    border-bottom: 2px solid #8e8e8e;
+    font-size: 18px;
+    font-weight: bold;
+    color: #11151a;}
+    .info .close {position: absolute;top: 10px;right: 10px;color: #888;width: 17px;height: 17px;background: url('https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/overlay_close.png');}
+    .info .close:hover {cursor: pointer;}
+    .info .body {position: relative;overflow: hidden;}
+    .info .desc {position: relative;margin: 13px 0 0 90px;height: 75px;}
+    .desc .ellipsis {overflow: hidden;text-overflow: ellipsis;white-space: nowrap;}
+    .desc .jibun {font-size: 11px;color: #888;margin-top: -2px;}
+    .info .img {position: absolute;top: 6px;left: 5px;width: 73px;height: 71px;border: 1px solid #ddd;color: #888;overflow: hidden;}
+    .info:after {content: '';position: absolute;margin-left: -12px;left: 50%;bottom: 0;width: 22px;height: 12px;background: url('https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/vertex_white.png')}
+    .info .link {color: #5085BB;}
+
+.studybanner {
+    padding-top: 10%;
+    padding-bottom: 2%;
+    border-bottom: 2px solid #11151a;
+    text-align: center;
+    background-color: #11151a;
+    color: white;
+    box-shadow: 2px 2px 3px 6px #11151a;
+}
+
+</style>
+  </head>
+
+<body>
+
+ <!--header-->
+  <header class="main-header clearfix" role="header" data-scroll>
+    <div class="logo">
+      <a href="{% url 'index' %}"><img src ="{% static 'assets/images/logoC2.png' %}"  style="width:25%"></a>
+    </div>
+    <a href="#menu" class="menu-link"><i class="fa fa-bars"></i></a>
+    <nav id="menu" class="main-nav" role="navigation">
+      <ul class="main-menu">
+        <li><a href="{% url 'index' %}">Home</a></li>
+        <li><a href="{% url 'hire' %}">채용공고</a></li>
+        <li class="has-submenu"><a href="{% url 'activity' %}">대외활동</a>
+          <ul class="sub-menu">
+            <li><a href="{% url 'activity' %}">대외활동</a></li>
+            <li><a href="{% url 'studyroom' %}" class="external" >스터디모임</a></li>
+          </ul>
+        </li>
+        <li><a href="{% url 'about' %}">About Us</a></li>
+
+      </ul>
+    </nav>
+  </header>
+
+  <br>
+<!--각 페이지 배너 -->
+<div class="studybanner">
+  <img src = "{% static 'assetsX/images/St.png' %}" width="500px">
+</div>
+
+ <!--메인 시작-->
+<!--스터디룸 card here-->
+  <section class="card_section">
+    <!-- Featured Starts Here -->
+    <div class="featured-items">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="section-heading">
+              <br>
+              <br>
+              <br>
+              <div class="line-dec"></div>
+              <h1 align="left">현재 진행되고 있는 스터디는?</h1>
+            </div>
+          </div>
+          <div class="col-md-12">
+            <div class="owl-carousel owl-theme">
+              <a href="https://www.catch.co.kr/CatchCafe/Study/171">
+                <div class="featured-item">
+                  <img src="{% static 'assetsX/images/studyroom1.jpg' %}" alt="Item 1">
+                  <h4>파이썬 코테 대비 스터디(전공자)</h4>
+                  <h6>서울대</h6>
+                </div>
+              </a>
+              <a href="https://www.catch.co.kr/CatchCafe/Study/172">
+                <div class="featured-item">
+                  <img src="{% static 'assetsX/images/studyroom2.jpg' %}" alt="Item 2">
+                  <h4>JAVA 코테 대비 스터디(전공자)</h4>
+                  <h6>한양대</h6>
+                </div>
+              </a>
+              <a href="https://www.catch.co.kr/CatchCafe/Study/173">
+                <div class="featured-item">
+                  <img src="{% static 'assetsX/images/studyroom3.jpg' %}" alt="Item 3">
+                  <h4>C++ 코테 대비 스터디(온라인병행)</h4>
+                  <h6>안암</h6>
+                </div>
+              </a>
+              <a href="https://www.catch.co.kr/CatchCafe/Study/174">
+                <div class="featured-item">
+                   <img src="{% static 'assetsX/images/studyroom4.jpg' %}" alt="Item 4">
+                  <h4>IT 개발자 포토폴리오 스터디</h4>
+                  <h6>서울대</h6>
+                </div>
+              </a>
+              <a href="https://www.catch.co.kr/CatchCafe/Study/175">
+                <div class="featured-item">
+                   <img src="{% static 'assetsX/images/studyroom5.jpg' %}" alt="Item 5">
+                  <h4>콘텐츠 공모전 스터디</h4>
+                  <h6>신촌</h6>
+                </div>
+              </a>
+              <a href="https://www.catch.co.kr/CatchCafe/Study/176">
+                <div class="featured-item">
+                  <img src="{% static 'assetsX/images/studyroom6.jpg' %}" alt="Item 6">
+                  <h4>마케팅 취업 스터디 #콘텐츠 산업</h4>
+                  <h6>한양대</h6>
+                </div>
+              </a>
+              <a href="https://www.catch.co.kr/CatchCafe/Study/177">
+                <div class="featured-item">
+                  <img src="{% static 'assetsX/images/studyroom7.jpg' %}" alt="Item 7">
+                  <h4>기획 직무 포토폴리오 스터디</h4>
+                  <h6>한양대</h6>
+                </div>
+              </a>
+              <a href="https://www.catch.co.kr/CatchCafe/Study/178">
+                <div class="featured-item">
+                  <img src="{% static 'assetsX/images/studyroom8.jpg' %}" alt="Item 8">
+                  <h4>트렌드 분석/PT스터디</h4>
+                  <h6>한양대</h6>
+                </div>
+              </a>
+              <a href="https://www.catch.co.kr/CatchCafe/Study/179">
+                <div class="featured-item">
+                  <img src="{% static 'assetsX/images/studyroom9.jpg' %}" alt="Item 9">
+                  <h4>북스터디</h4>
+                  <h6>한양대</h6>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Featred Ends Here -->
+    </section>
+
+<!--스터디룸 card-end-->
+
+    <!--스터디 테이블-->
+  <section class="table_section">
+  <div class="featured-items" >
+      <div class="container">
+        <div class="section-heading" align="center">
+          <div class="line-dec"></div>
+          <h1 align="left"> 이런 스터디는 어떠세요? </h1>
+        </div>
+        <table id="myTable" class="table" >
+  <thead class="table-light" style="background-color: #dc3545; color: #1151a; text-align: center; font-size: 16px; font-weight: bold; color: white;">
+    <tr>
+      <td>#</td>
+      <td>제목</td>
+      <td>내용</td>
+      <td>작성자</td>
+    </tr>
+    </thead >
+
+{% for studyroom in studyrooms%}
+    <tbody style="text-align: center;">
+    <tr>
+    <td>{{studyroom.studynum}}</td>
+    <td><a href="https://www.inflearn.com{{studyroom.studylink}}">{{studyroom.studytitle}}</a>
+    </td>
+    <td><a href="https://www.inflearn.com{{studyroom.studylink}}">{{studyroom.studycontent}}</a></td>
+    <td>{{studyroom.studywriter}}</td>
+    </tr>
+    </tbody>
+    {% endfor%}
+
+    {% if studyrooms.has_other_pages %}
+      <ul class = "pagination" style="margin-left: 2%; color: #1151a; ">
+        {% if studyrooms.has_previous %}
+          <li ><a href="?page={{ studyrooms.previous_page_number }}"  style="color: #1151a;">&laquo;</a></li>
+        {% else %}
+          <li class = "disabled"><span style="padding-right: 15px; color: #1151a;" >&laquo;</span></li>
+        {% endif %}
+
+        {% for i in studyrooms.paginator.page_range %}
+
+          {% if studyrooms.number == i %}
+             <li class="active" style="">
+                <span style="font-size: large; color: white; padding-left:15px; padding-right: 15px; background-color: #dc3545; border-radius:5px; font-family: 'BMHANNAPro';">
+                    {{ i }} <span class="sr-only">(current)</span></span></li>
+          {% else %}
+            <li><a href="?page={{ i }}" style=" padding-left: 10px; padding-right: 15px; font-size: large; color: black; font-family: 'BMHANNAPro'; " >{{ i }}</a></li>
+          {% endif %}
+        {% endfor %}
+
+        {% if studyrooms.has_next %}
+            <li><a href="?page={{ studyrooms.next_page_number }}">&raquo;</a></li>
+        {% else %}
+            <li class="disabled"><span>&raquo;</span></li>
+        {%endif %}
+        </ul>
+    {%endif%}
+    </table>
+      </div>
+  </div>
+  </section>
+<!--스터디 테이블end-->
+
+    <!--지도 부분-->
+  <section style=" " class="map_section">
+<div align="center">
+<div>
+    <div class="section-heading">
+      <div style="width:100%; box-shadow: 1px 4px 5px 0px #c1cad2;" class="line-dec"></div>
+            <br>
+      <br>
+      <h1 style="color:#11151a; margin-top: 5px; margin-bottom: 20px; ">스터디룸 위치 찾기</h1>
+    </div>
+</div>
+<div id="map" style=" width:550px;height:450px; margin-bottom: 50px; border: 2px solid #dee2e6; position: relative; overflow: hidden; box-shadow: 7px 7px 14px #cdcfd1;"></div>
+  <br>
+  <br>
+
+<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=1cc2187c8717ffab77eb12ceab5806ae"></script>
+<script>
+var mapContainer = document.getElementById('map'), // 지도의 중심좌표
+    mapOption = {
+        center: new kakao.maps.LatLng(37.501332, 127.039670), // 지도의 중심좌표
+        level: 8 // 지도의 확대 레벨
+    };
+
+var map = new daum.maps.Map(mapContainer, mapOption); // 지도를 생성합니다
+
+// 지도에 마커를 표시합니다
+var marker1 = new daum.maps.Marker({
+    map: map,
+    position: new daum.maps.LatLng(37.459287, 126.953116)
+});
+
+var marker2 = new daum.maps.Marker({
+    map: map,
+    position: new daum.maps.LatLng(37.555220, 127.043710)
+});
+
+var marker3 = new daum.maps.Marker({
+    map: map,
+    position: new daum.maps.LatLng(37.590987, 127.027274)
+});
+
+var marker4 = new daum.maps.Marker({
+    map: map,
+    position: new daum.maps.LatLng(37.555158, 126.936904)
+});
+
+var marker5 = new daum.maps.Marker({
+    map: map,
+    position: new daum.maps.LatLng(37.501332, 127.039670)
+});
+// 커스텀 오버레이에 표시할 컨텐츠 입니다
+// 커스텀 오버레이는 아래와 같이 사용자가 자유롭게 컨텐츠를 구성하고 이벤트를 제어할 수 있기 때문에
+// 별도의 이벤트 메소드를 제공하지 않습니다
+var content1 = '<div class="wrap">' +
+            '    <div class="info">' +
+            '        <div class="title">' +
+            '            서울대학교' +
+            '            <div class="close" onclick="closeOverlay1()" title="닫기"></div>' +
+            '        </div>' +
+            '        <div class="body">' +
+            '            <div class="img">' +
+            '                <img src="{% static 'assetsX/images/seouluniv_1.jpg' %}"  width="73" height="70">' +
+            '           </div>' +
+            '            <div class="desc">' +
+            '                <div class="ellipsis">서울 관악구 관악로 1</div>' +
+            '                <div class="jibun ellipsis">(지번) 신림동 산 56-1</div>' +
+            '                <div><a href="https://www.catch.co.kr/CatchCafe/Study/171">스터디 정보</a></div>' +
+            '            </div>' +
+            '        </div>' +
+            '    </div>' +
+            '</div>';
+
+var content2 = '<div class="wrap">' +
+            '    <div class="info">' +
+            '        <div class="title">' +
+            '            한양대학교' +
+            '            <div class="close" onclick="closeOverlay2()" title="닫기"></div>' +
+            '        </div>' +
+            '        <div class="body">' +
+            '            <div class="img">' +
+            '                <img src="{% static 'assetsX/images/hanyanguniv_1.jpg' %}" width="73" height="70">' +
+            '           </div>' +
+            '            <div class="desc">' +
+            '                <div class="ellipsis">서울 성동구 왕십리로 222</div>' +
+            '                <div class="jibun ellipsis">(지번) 행당동 17-7</div>' +
+            '                <div><a href="https://www.catch.co.kr/CatchCafe/Study/172">스터디 정보</a></div>' +
+            '            </div>' +
+            '        </div>' +
+            '    </div>' +
+            '</div>';
+
+var content3 = '<div class="wrap">' +
+            '    <div class="info">' +
+            '        <div class="title">' +
+            '            고려대학교' +
+            '            <div class="close" onclick="closeOverlay3()" title="닫기"></div>' +
+            '        </div>' +
+            '        <div class="body">' +
+            '            <div class="img">' +
+            '                <img src="{% static 'assetsX/images/hanyanguniv_1.jpg' %}" width="73" height="70">' +
+            '           </div>' +
+            '            <div class="desc">' +
+            '                <div class="ellipsis">서울 성북구 안암로 145</div>' +
+            '                <div class="jibun ellipsis">(지번) 안암동5가 1-2</div>' +
+            '                <div><a href="https://www.catch.co.kr/CatchCafe/Study/173">스터디 정보</a></div>' +
+            '            </div>' +
+            '        </div>' +
+            '    </div>' +
+            '</div>';
+var content4 = '<div class="wrap">' +
+            '    <div class="info">' +
+            '        <div class="title">' +
+            '            신촌' +
+            '            <div class="close" onclick="closeOverlay4()" title="닫기"></div>' +
+            '        </div>' +
+            '        <div class="body">' +
+            '            <div class="img">' +
+            '                <img src="{% static 'assetsX/images/hanyanguniv_1.jpg' %}" width="73" height="70">' +
+            '           </div>' +
+            '            <div class="desc">' +
+            '                <div class="ellipsis">서울 관악구 관악로 1</div>' +
+            '                <div class="jibun ellipsis">서울 서대문구 연세로 8-1 버티고타워 5층</div>' +
+            '                <div><a href="https://www.catch.co.kr/CatchCafe/Study/175">스터디 정보</a></div>' +
+            '            </div>' +
+            '        </div>' +
+            '    </div>' +
+            '</div>';
+
+var content5 = '<div class="wrap">' +
+            '    <div class="info">' +
+            '        <div class="title">' +
+            '            멀티캠퍼스' +
+            '            <div class="close" onclick="closeOverlay5()" title="닫기"></div>' +
+            '        </div>' +
+            '        <div class="body">' +
+            '            <div class="img">' +
+            '                <img src="{% static 'assetsX/images/multicampus.jpg' %}" width="73" height="70">' +
+            '           </div>' +
+            '            <div class="desc">' +
+            '                <div class="ellipsis">서울 강남구 테헤란로 212</div>' +
+            '                <div class="jibun ellipsis">(지번) 역삼동 718-5</div>' +
+            '                <div><a href="https://www.multicampus.com/kr/index.html">홈페이지</a></div>' +
+            '            </div>' +
+            '        </div>' +
+            '    </div>' +
+            '</div>';
+// 마커 위에 커스텀오버레이를 표시합니다
+// 마커를 중심으로 커스텀 오버레이를 표시하기위해 CSS를 이용해 위치를 설정했습니다
+var overlay1 = new daum.maps.CustomOverlay({
+    content: content1,
+    map: map,
+    position: marker1.getPosition()
+});
+
+    var overlay2 = new daum.maps.CustomOverlay({
+    content: content2,
+    map: map,
+    position: marker2.getPosition()
+});
+var overlay3 = new daum.maps.CustomOverlay({
+    content: content3,
+    map: map,
+    position: marker3.getPosition()
+});
+
+var overlay4 = new daum.maps.CustomOverlay({
+    content: content4,
+    map: map,
+    position: marker4.getPosition()
+});
+
+var overlay5 = new daum.maps.CustomOverlay({
+    content: content5,
+    map: map,
+    position: marker5.getPosition()
+});
+// 마커를 클릭했을 때 커스텀 오버레이를 표시합니다
+daum.maps.event.addListener(marker1, 'click', function() {
+    overlay1.setMap(map);
+});
+
+daum.maps.event.addListener(marker2, 'click', function() {
+    overlay2.setMap(map);
+});
+
+daum.maps.event.addListener(marker3, 'click', function() {
+    overlay3.setMap(map);
+});
+
+daum.maps.event.addListener(marker4, 'click', function() {
+    overlay4.setMap(map);
+});
+
+daum.maps.event.addListener(marker5, 'click', function() {
+    overlay5.setMap(map);
+});
+
+// 커스텀 오버레이를 닫기 위해 호출되는 함수입니다
+function closeOverlay1() {
+    overlay1.setMap(null);
+}
+
+function closeOverlay2() {
+    overlay2.setMap(null);
+}
+
+function closeOverlay3() {
+    overlay3.setMap(null);
+}
+
+function closeOverlay4() {
+    overlay4.setMap(null);
+}
+
+function closeOverlay5() {
+    overlay5.setMap(null);
+}
+</script>
+</div>
+  </section>
+
+<!--메인 끝-->
+
+  <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+             <p><i class="fa fa-copyright"></i> Copyright 2021 by BIGTOPIA | <a href="#" rel="sponsored" target="_parent">DAECHWITA</a></p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <script src="{% static 'assetsX/js/isotope.min.js' %}"></script>
+    <script src="{% static 'assetsX/js/owl-carousel.js' %}"></script>
+    <script src="{% static 'assetsX/js/lightbox.js' %}"></script>
+    <script src="{% static 'assetsX/js/tabs.js' %}"></script>
+    <script src="{% static 'assetsX/js/video.js' %}"></script>
+    <script src="{% static 'assetsX/js/slick-slider.js' %}"></script>
+    <script src="{% static 'assetsX/js/custom.js' %}"></script>
+    <!--<script>
+        //according to loftblog tut
+        $('.nav li:first').addClass('active');
+
+        var showSection = function showSection(section, isAnimate) {
+          var
+          direction = section.replace(/#/, ''),
+          reqSection = $('.section').filter('[data-section="' + direction + '"]'),
+          reqSectionPos = reqSection.offset().top - 0;
+
+          if (isAnimate) {
+            $('body, html').animate({
+              scrollTop: reqSectionPos },
+            800);
+          } else {
+            $('body, html').scrollTop(reqSectionPos);
+          }
+
+        };
+
+        var checkSection = function checkSection() {
+          $('.section').each(function () {
+            var
+            $this = $(this),
+            topEdge = $this.offset().top - 80,
+            bottomEdge = topEdge + $this.height(),
+            wScroll = $(window).scrollTop();
+            if (topEdge < wScroll && bottomEdge > wScroll) {
+              var
+              currentId = $this.data('section'),
+              reqLink = $('a').filter('[href*=\\#' + currentId + ']');
+              reqLink.closest('li').addClass('active').
+              siblings().removeClass('active');
+            }
+          });
+        };
+
+        $('.main-menu, .scroll-to-section').on('click', 'a', function (e) {
+          if($(e.target).hasClass('external')) {
+            return;
+          }
+          e.preventDefault();
+          $('#menu').removeClass('active');
+          showSection($(this).attr('href'), true);
+        });
+
+        $(window).scroll(function () {
+          checkSection();
+        });
+    </script> -->
+  <!-- StudyroomBootstrap core JavaScript -->
+    <script src="{% static 'vendorX/jquery/jquery.min.js' %}"></script>
+    <script src="{% static 'vendorX/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+
+    <!-- Additional Scripts -->
+    <script src="{% static 'assetsX/js/custom.js' %}"></script>
+    <script src="{% static 'assetsX/js/owl.js' %}"></script>
+    <script src="{% static 'assetsX/js/isotope.js' %}"></script>
+
+
+
+    <script language = "text/Javascript">
+      cleared[0] = cleared[1] = cleared[2] = 0; //set a cleared flag for each field
+      function clearField(t){                   //declaring the array outside of the
+      if(! cleared[t.id]){                      // function makes it static and global
+          cleared[t.id] = 1;  // you could use true and false, but that's more typing
+          t.value='';         // with more chance of typos
+          t.style.color='#fff';
+          }
+      }
+    </script>
+        </div>
+      </div>
+    </div>
+  </section>
+</body>
+</html>

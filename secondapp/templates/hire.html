@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+
+    <title>채용 공고</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+
+    <!-- Additional CSS Files -->
+
+    <link rel="stylesheet" href="{% static 'assetsW/css/fontawesome.css' %}">
+    <link rel="stylesheet" href="{% static 'assetsW/css/templatemo-grad-school.css' %}">
+    <link rel="stylesheet" href="{% static 'assetsW/css/owl.css' %}">
+    <link rel="stylesheet" href="{% static 'assetsW/css/lightbox.css' %}">
+    <link rel="stylesheet" href="{% static 'assetsW/css/styles.css' %}">
+
+    <link rel="stylesheet" href="{% static 'assets/css/fontawesome.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/templatemo-grad-school.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/owl.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/lightbox.css' %}">
+
+<style>
+@font-face {
+    font-family: 'MapoFlowerIsland';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/MapoFlowerIslandA.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+font-family: 'BMHANNAPro';
+src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_seven@1.0/BMHANNAPro.woff') format('woff');
+font-weight: normal;
+font-style: normal;
+}
+
+.hirebanner {
+    padding-top: 11%;
+    padding-bottom: 2%;
+    border-bottom: 2px solid #11151a;
+    text-align: center;
+    background-color: #11151a;
+    color: white;
+    box-shadow: 2px 2px 3px 6px #11151a;
+}
+
+
+</style>
+  </head>
+
+
+<body>
+ <!--header-->
+  <header class="main-header clearfix" role="header" data-scroll>
+    <div class="logo">
+      <a href="{% url 'index' %}"><img src ="{% static 'assets/images/logoC2.png' %}"  style="width:25%"></a>
+    </div>
+    <a href="#menu" class="menu-link"><i class="fa fa-bars"></i></a>
+    <nav id="menu" class="main-nav" role="navigation">
+      <ul class="main-menu">
+        <li><a href="{% url 'index' %}">Home</a></li>
+        <li><a href="{% url 'hire' %}">채용공고</a></li>
+        <li class="has-submenu"><a href="{% url 'activity' %}">대외활동</a>
+          <ul class="sub-menu">
+            <li><a href="{% url 'activity' %}">대외활동</a></li>
+            <li><a href="{% url 'studyroom' %}" class="external" >스터디모임</a></li>
+          </ul>
+        </li>
+        <li><a href="{% url 'about' %}">About Us</a></li>
+
+      </ul>
+    </nav>
+  </header>
+
+  <br>
+<!--각 페이지 배너 -->
+<div class="hirebanner">
+   <img src = "{% static 'assetsW/images/Rb.png' %}" width="500px">
+</div>
+             <section class="pt-5">
+            <div class="container px-lg-5">
+                <!-- Page Features-->
+                <div class="row gx-lg-5">
+                    <div class="col-lg-6 col-xxl-4 mb-5">
+                            <div class="card-body text-center p-0 p-lg-0 pt-0 pt-lg-0">
+                                <div class="a">
+                                <a href="https://sk.wd3.myworkdayjobs.com/en-US/SKCC_EX_CAREER/job/Bundang/XMLNAME----Data-platform---_SKCC-JR-00000043" target="_blank"><img src="{% static 'assetsW/images/q1.PNG' %}" width="300" alt=""></a>
+                                </div>
+                            </div>
+                    </div>
+                    <div class="col-lg-6 col-xxl-4 mb-5">
+                            <div class="card-body text-center p-0 p-lg-0 pt-0 pt-lg-0">
+                                 <div class="a">
+                                     <a href="https://recruit.hyundai.com/hfront/webapply/applyView.do?recuYy=2021&recuType=11&recuCls=145" target="_blank"><img src="{% static 'assetsW/images/q2.PNG' %}"width="300" alt=""></a>
+                                 </div>
+                            </div>
+                    </div>
+                    <div class="col-lg-6 col-xxl-4 mb-5">
+                            <div class="card-body text-center p-0 p-lg-0 pt-0 pt-lg-0">
+                               <div class="a">
+                                <a href="https://hyundai-autoever.recruiter.co.kr/app/jobnotice/view?systemKindCode=MRS2&jobnoticeSn=62662" target="_blank"><img src="{% static 'assetsW/images/q3.PNG' %}"width="300" alt=""></a>
+                               </div>
+                            </div>
+                    </div>
+                    <div class="col-lg-6 col-xxl-4 mb-5">
+                            <div class="card-body text-center p-0 p-lg-0 pt-0 pt-lg-0">
+                                <div class="a">
+                                <a href="https://apply.lg.com/app/job/RetrieveJobNoticesDetail.rpi" target="_blank"><img src="{% static 'assetsW/images/q4.PNG' %}"width="300" alt=""></a>
+                                </div>
+                            </div>
+                    </div>
+                     <div class="col-lg-6 col-xxl-4 mb-5">
+                            <div class="card-body text-center p-0 p-lg-0 pt-0 pt-lg-0">
+                                <div class="a">
+                                <a href="https://apply.lg.com/app/job/RetrieveJobNoticesDetail.rpi" target="_blank"><img src="{% static 'assetsW/images/q5.PNG' %}"width="300" alt=""></a>
+                                </div>
+                            </div>
+                    </div>
+                    <div class="col-lg-6 col-xxl-4 mb-5">
+                            <div class="card-body text-center p-0 p-lg-0 pt-0 pt-lg-0">
+                              <div class="a">
+                                <a href="https://www.hanwhain.com/web/apply/notification/view.do?rtSeq=5748" target="_blank"><img src="{% static 'assetsW/images/q6.PNG' %}"width="300" alt=""></a>
+                                </div>
+                            </div>
+                    </div>
+                    <div class="col-lg-6 col-xxl-4 mb-5">
+                            <div class="card-body text-center p-0 p-lg-0 pt-0 pt-lg-0">
+                               <div class="a">
+                                <a href="https://bgf.recruiter.co.kr/app/jobnotice/view?systemKindCode=MRS2&jobnoticeSn=66602" target="_blank"><img src="{% static 'assetsW/images/q7.PNG' %}"width="300" alt=""></a>
+                                </div>
+                            </div>
+                    </div>
+                    <div class="col-lg-6 col-xxl-4 mb-5">
+                            <div class="card-body text-center p-0 p-lg-0 pt-0 pt-lg-0">
+                                <div class="a">
+                                <a href="https://career.woowahan.com/recruitment/R2108004/detail?keyword=%EB%B9%85%EB%8D%B0%EC%9D%B4%ED%84%B0&category=jobGroupCodes%3ABA005001" target="_blank"><img src="{% static 'assetsW/images/q8.PNG' %}"width="300" alt=""></a>
+                                </div>
+                            </div>
+                    </div>
+                     <div class="col-lg-6 col-xxl-4 mb-5">
+                            <div class="card-body text-center p-0 p-lg-0 pt-0 pt-lg-0">
+                                <div class="a">
+                                <a href="https://toss.im/career/job-detail?job_id=4428084003" target="_blank"><img src="{% static 'assetsW/images/q9.PNG' %}"width="300" alt=""></a>
+                                </div>
+                            </div>
+                    </div>
+                    <div class="col-lg-6 col-xxl-4 mb-5">
+                            <div class="card-body text-center p-0 p-lg-0 pt-0 pt-lg-0">
+                                <div class="a">
+                                <a href="https://toss.im/career/job-detail?job_id=4154060003" target="_blank"><img src="{% static 'assetsW/images/q10.PNG' %}"width="300" alt=""></a>
+                                </div>
+                            </div>
+                    </div>
+                    <div class="col-lg-6 col-xxl-4 mb-5">
+                            <div class="card-body text-center p-0 p-lg-0 pt-0 pt-lg-0">
+                                <div class="a">
+                                <a href="https://www.notion.so/VROONG-5c5458e75f9142f8b37272d7d146dffc" target="_blank"><img src="{% static 'assetsW/images/q11.PNG' %}"width="300" alt=""></a>
+                                </div>
+                            </div>
+                    </div>
+                     <div class="col-lg-6 col-xxl-4 mb-5">
+                            <div class="card-body text-center p-0 p-lg-0 pt-0 pt-lg-0">
+                                <div class="a">
+                                <a href="https://www.jobkorea.co.kr/Recruit/GI_Read/35518878?rPageCode=SL" target="_blank"><img src="{% static 'assetsW/images/q12.PNG' %}"width="300" alt=""></a>
+                                </div>
+                            </div>
+                    </div>
+                    <div class="col-lg-6 col-xxl-4 mb-5">
+                            <div class="card-body text-center p-0 p-lg-0 pt-0 pt-lg-0">
+                                <div class="a">
+                                <a href="https://www.jobkorea.co.kr/Recruit/GI_Read/35560331?Oem_Code=C1" target="_blank"><img src="{% static 'assetsW/images/q13.PNG' %}"width="300" alt=""></a>
+                                </div>
+                            </div>
+                    </div>
+                    <div class="col-lg-6 col-xxl-4 mb-5">
+                            <div class="card-body text-center p-0 p-lg-0 pt-0 pt-lg-0">
+                                <div class="a">
+                                <a href="https://www.jobkorea.co.kr/Recruit/GI_Read/35534671?Oem_Code=C1" target="_blank"><img src="{% static 'assetsW/images/q14.PNG' %}"width="300" alt=""></a>
+                                </div>
+                            </div>
+                    </div>
+                    <div class="col-lg-6 col-xxl-4 mb-5">
+                            <div class="card-body text-center p-0 p-lg-0 pt-0 pt-lg-0">
+                                <div class="a">
+                                <a href="https://apply.lg.com/app/job/RetrieveJobNoticesDetail.rpi;jsessionid=F82EF49834D6A65BFE03C6FEF887DDF7" target="_blank"><img src="{% static 'assetsW/images/q15.PNG' %}"width="300" alt=""></a>
+                                </div>
+                            </div>
+                    </div>
+                    <div class="col-lg-6 col-xxl-4 mb-5">
+                            <div class="card-body text-center p-0 p-lg-0 pt-0 pt-lg-0">
+                                <div class="a">
+                                <a href="https://www.jobkorea.co.kr/Recruit/GI_Read/35560303?rPageCode=SL" target="_blank"><img src="{% static 'assetsW/images/q16.PNG' %}"width="300" alt=""></a>
+                                </div>
+                            </div>
+                    </div>
+                    <div class="col-lg-6 col-xxl-4 mb-5">
+                            <div class="card-body text-center p-0 p-lg-0 pt-0 pt-lg-0">
+                                <div class="a">
+                                <a href="https://www.jobkorea.co.kr/Recruit/GI_Read/35562038?rPageCode=SL" target="_blank"><img src="{% static 'assetsW/images/q17.PNG' %}"width="300" alt=""></a>
+                                </div>
+                            </div>
+                    </div>
+                    <div class="col-lg-6 col-xxl-4 mb-5">
+                            <div class="card-body text-center p-0 p-lg-0 pt-0 pt-lg-0">
+                                <div class="a">
+                                <a href="https://kr.tmaxsoft.com/recruit/recruitNotice.do" target="_blank"><img src="{% static 'assetsW/images/q18.PNG' %}"width="300" alt=""></a>
+                                </div>
+                            </div>
+                    </div>
+                    <div class="col-lg-6 col-xxl-4 mb-5">
+                            <div class="card-body text-center p-0 p-lg-0 pt-0 pt-lg-0">
+                                <div class="a">
+                                <a href="https://www.jobkorea.co.kr/Recruit/GI_Read/35371164?Oem_Code=C&sc=69" target="_blank"><img src="{% static 'assetsW/images/q19.PNG' %}"width="300" alt=""></a>
+                                </div>
+                            </div>
+                    </div>
+                    <div class="col-lg-6 col-xxl-4 mb-5">
+                            <div class="card-body text-center p-0 p-lg-0 pt-0 pt-lg-0">
+                                <div class="a">
+                                <a href="https://www.jobkorea.co.kr/Recruit/GI_Read/35576164?rPageCode=PL" target="_blank"><img src="{% static 'assetsW/images/q20.PNG' %}"width="300" alt=""></a>
+                                </div>
+                            </div>
+                    </div>
+                    <div class="col-lg-6 col-xxl-4 mb-5">
+                            <div class="card-body text-center p-0 p-lg-0 pt-0 pt-lg-0">
+                                <div class="a">
+                                <a href="http://www.bigvalue.co.kr/recruit" target="_blank"><img src="{% static 'assetsW/images/q21.PNG' %}"width="300" alt=""></a>
+                                </div>
+                            </div>
+                    </div>
+                    <div class="col-lg-6 col-xxl-4 mb-5">
+                            <div class="card-body text-center p-0 p-lg-0 pt-0 pt-lg-0">
+                                <div class="a">
+                                <a href="https://www.jobkorea.co.kr/Recruit/GI_Read/35575488?rPageCode=PL" target="_blank"><img src="{% static 'assetsW/images/q22.PNG' %}"width="300" alt=""></a>
+                                </div>
+                            </div>
+                    </div>
+                    <div class="col-lg-6 col-xxl-4 mb-5">
+                            <div class="card-body text-center p-0 p-lg-0 pt-0 pt-lg-0">
+                                <div class="a">
+                                <a href="https://www.jobkorea.co.kr/Recruit/Co_Read/C/saintsecurity" target="_blank"><img src="{% static 'assetsW/images/q23.PNG' %}"width="300" alt=""></a>
+                                </div>
+                            </div>
+                    </div>
+                    <div class="col-lg-6 col-xxl-4 mb-5">
+                            <div class="card-body text-center p-0 p-lg-0 pt-0 pt-lg-0">
+                                <div class="a">
+                                <a href="https://www.jobkorea.co.kr/Recruit/GI_Read/35501168?Oem_Code=C1&PageGbn=" target="_blank"><img src="{% static 'assetsW/images/q24.PNG' %}"width="300" alt=""></a>
+                                </div>
+                            </div>
+                    </div>
+                </div>
+            </div>
+         </section>
+
+
+<!--채용공고 테이블-->
+  <section class="table_section">
+  <div class="featured-items" >
+      <div class="container">
+        <div class="section-heading" align="center">
+            <div class="line-dec" style=" width: 30px;height: 5px; background-color: #dc3545; margin-bottom: 15px; }"></div>
+                <h1 align="left"> 더 많은 기업의 채용공고를 확인해 보세요 </h1>
+        </div>
+
+        <table id="myTable" class="table">
+  <thead class="table-light"  style="margin-top:10px; ">
+    <tr>
+      <td style="background-color: #dc3545;  text-align: center; font-size: 16px; font-weight: bold; color: white;" >#</td>
+      <td style="background-color: #dc3545; text-align: center; font-size: 16px; font-weight: bold; color: white;">기업명</td>
+      <td style="background-color: #dc3545;  text-align: center; font-size: 16px; font-weight: bold; color: white;">채용 직무</td>
+      <td style="background-color: #dc3545; text-align: center; font-size: 16px; font-weight: bold; color: white;">채용 상세</td>
+        <td style="background-color: #dc3545;  text-align: center; font-size: 16px; font-weight: bold; color: white;">근무 형태</td>
+        <td style="background-color: #dc3545;  text-align: center; font-size: 16px; font-weight: bold; color: white;">근무 위치</td>
+        <td style="background-color: #dc3545; text-align: center; font-size: 16px; font-weight: bold; color: white;">마감일</td>
+
+    </tr>
+    </thead>
+    {% for hire in hires%}
+    <tbody>
+    <tr style = "color: #1151a; font-size: 12px; text-align:center; ">
+    <td>{{hire.companyid}}</td>
+    <td>{{hire.companyname}}</td>
+    <td>{{hire.companyjob}}</td>
+    <td>{{hire.companydetail}}</td>
+        <td>{{hire.companywork}}</td>
+        <td>{{hire.companylocation}}</td>
+        <td>{{hire.companydeadline}}</td>
+
+    </tr>
+    </tbody>
+    {% endfor%}
+
+          {% if hires.has_other_pages %}
+      <ul class = "pagination" style="margin-left: 2%; margin-bottom: 12px; " >
+        {% if hires.has_previous %}
+          <li><a style = "color: #11151a;" href="?page={{ hires.previous_page_number }}" >&laquo;</a></li>
+        {% else %}
+          <li class = "disabled"><span style="color: #11151a padding-right: 15px;" >&laquo;</span></li>
+        {% endif %}
+
+        {% for i in hires.paginator.page_range %}
+          {% if hires.number == i %}
+             <li class="active" style="">
+                <span style="font-size: large; color: white; padding-left:15px; padding-right: 15px; background-color: #dc3545; border-radius:5px; font-family: 'BMHANNAPro';">
+                    {{ i }} <span class="sr-only">(current)</span></span></li>
+          {% else %}
+            <li><a href="?page={{ i }}" style=" padding-left: 10px; padding-right: 15px; font-size: large; color: black; font-family: 'BMHANNAPro'; " >{{ i }}</a></li>
+          {% endif %}
+        {% endfor %}
+
+        {% if hires.has_next %}
+            <li><a style="color:#11151a;" href="?page={{ hires.next_page_number }}">&raquo;</a></li>
+        {% else %}
+            <li class="disabled"><span>&raquo;</span></li>
+        {%endif %}
+      </ul>
+    {%endif%}
+
+    </table>
+      </div>
+  </div>
+<br>
+<br>
+<br>
+  </section>
+<!--채용공고 테이블end-->
+
+  <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+             <p><i class="fa fa-copyright"></i> Copyright 2021 by BIGTOPIA | <a href="#" rel="sponsored" target="_parent">DAECHWITA</a></p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <script src="{% static 'assetsW/js/isotope.min.js' %}"></script>
+    <script src="{% static 'assetsW/js/owl-carousel.js' %}"></script>
+    <script src="{% static 'assetsW/js/lightbox.js' %}"></script>
+    <script src="{% static 'assetsW/js/tabs.js' %}"></script>
+    <script src="{% static 'assetsW/js/video.js' %}"></script>
+    <script src="{% static 'assetsW/js/slick-slider.js' %}"></script>
+    <script src="{% static 'assetsW/js/custom.js' %}"></script>
+
+        </div>
+      </div>
+    </div>
+  </section>
+</body>
+</html>

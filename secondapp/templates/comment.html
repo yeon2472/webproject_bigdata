@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {%load static%}
+    <meta charset="UTF-8">
+    <title>게시판 - comment</title>
+    <link href="{% static 'vendorY/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+
+
+	<link rel="stylesheet" href="{% static 'assets/css/fontawesome.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/templatemo-grad-school.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/owl.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/lightbox.css' %}">
+
+<style>
+@font-face {
+    font-family: 'MapoFlowerIsland';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/MapoFlowerIslandA.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+font-family: 'BMHANNAPro';
+src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_seven@1.0/BMHANNAPro.woff') format('woff');
+font-weight: normal;
+font-style: normal;
+}
+
+.activitybanner {
+    padding-top: 10%;
+    padding-bottom: 2%;
+    border-bottom: 2px solid #11151a;
+    text-align: center;
+    background-color: #11151a;
+    color: white;
+    box-shadow: 2px 2px 3px 6px #11151a;
+}
+#postheader {
+    background-color : white;
+    }
+#postul a {
+    color:black;
+}
+
+#postsubul  a:hover{
+    color: red;
+    font-weight: 600;
+    margin-top : 0;
+}
+
+body {
+    margin-top:10% ;
+    }
+.postbanner {
+    padding-bottom: 4%;
+    text-align: center;
+}
+</style>
+</head>
+<body>
+  <!--header-->
+
+
+  <header id = "postheader" class="main-header clearfix" role="header" data-scroll>
+    <div class="logo">
+      <a href="{% url 'index' %}"><img src ="{% static 'assets/images/logo4.png' %}"  style="width:25%"></a>
+    </div>
+    <a href="#menu" class="menu-link"><i class="fa fa-bars"></i></a>
+    <nav id="menu" class="main-nav" role="navigation">
+      <ul id = "postul" class="main-menu" >
+        <li><a href="{% url 'index' %}">Home</a></li>
+        <li><a href="{% url 'hire' %}">채용공고</a></li>
+        <li class="has-submenu"><a href="{% url 'activity' %}">대외활동</a>
+          <ul id = "postsubul" class="sub-menu">
+            <li style="margin-bottm:0;"><a href="{% url 'activity' %}">대외활동</a></li>
+            <li><a href="{% url 'studyroom' %}" class="external" >스터디모임</a></li>
+          </ul>
+        </li>
+        <li><a href="{% url 'about' %}">About Us</a></li>
+
+      </ul>
+    </nav>
+  </header>
+<div class="container">
+
+        <div class="navbar navbar-dark bg-dark shadow-sm mb-3" style="background-color: #e3edf8!important;
+        border: 2px solid #e3edf8; box-shadow: 3px 3px 5px 2px #e9ecef !important; border-radius: 4px; width: 670px; margin: auto; text-shadow: 1px 1px 4px #76828d; ">
+            <div class="container d-flex justify-content-between" style="background-color: #e3edf8; margin-left:230px;">
+                <a href="/secondapp/activity/" class="navbar-brand d-flex align-items-center">
+                    <strong style="color:#452f7d;">게시판 댓글달기</strong>
+                </a>
+            </div>
+        </div>
+
+     <form method="POST" action = '{% url "comment" id %}' style="width: 650px; margin: 40px auto;">
+        {% csrf_token %}
+        <div class="form-group row">
+            <label for="inputAuthor" class="col-sm-2 col-form-label" style="text-align:right;"><strong>작성자</strong></label>
+            <div class="col-sm-10">
+                <input type="text" name="author" class="form-control" id="inputAuthor" value="">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="inputPassword" class="col-sm-2 col-form-label" style="text-align:right;"><strong>비밀번호</strong></label>
+            <div class="col-sm-10">
+                <input type="text" name="password" class="form-control" id="inputPassword" value="">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="inputContent" class="col-sm-2 col-form-label" style="text-align:right;"><strong>내용</strong></label>
+            <div class="col-sm-10">
+                <textarea type="text" name="content" class="form-control" id="inputContent" style=" height:160px !important;"></textarea>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col-auto mr-auto"></div>
+            <div class="col-auto">
+                <input class="btn btn-primary" type="submit" value="저장">
+            </div>
+
+        </div>
+    </form>
+
+</div>
+
+</body>
+</html>

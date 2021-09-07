@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+    <title>대.취.타</title>
+    <!-- Bootstrap core CSS -->
+    <link href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+    <!-- Additional CSS Files -->
+    <link rel="stylesheet" href="{% static 'assets/css/fontawesome.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/templatemo-grad-school.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/owl.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/lightbox.css' %}">
+     <!--main 하단 link안내menu-->
+    <link rel="stylesheet" type="text/css" href="{% static 'assetsH/css/normalize.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'assetsH/css/demo.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'assetsH/css/style-ama.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'assetsH/pater/pater.css' %}" />
+
+<style>
+.nanumsquare {
+    font-family: 'NanumSquare', sans-serif !important;
+}
+@font-face {
+    font-family: 'Wemakeprice-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-10-21@1.0/Wemakeprice-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+font-family: 'BMHANNAPro';
+src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_seven@1.0/BMHANNAPro.woff') format('woff');
+font-weight: normal;
+font-style: normal;
+}
+#tabs img {
+    margin-bottom: 3px;
+}
+#tabs img:hover {
+    opacity : 0.5;
+}
+
+#tabs a:hover {
+    font-size: 18px;
+    color : #ff5f2e;
+}
+
+
+.searchBox {
+    position: absolute;
+    top: 90%;
+    left: 50%;
+    transform:  translate(-50%,50%);
+    background: #F4F5F9;
+    height: 60px;
+    border-radius: 40px;
+    padding: 10px;
+
+}
+
+.searchBox:hover > .searchInput {
+    width: 240px;
+    padding: 0 6px;
+}
+
+.searchBox:hover > .searchButton {
+  background: #fcbe32;
+  color : white;
+}
+
+.searchButton {
+    color: white;
+    float: right;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #181D32;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.4s;
+}
+
+.searchInput {
+    border:none;
+    background: none;
+    outline:none;
+    float:left;
+    padding: 0;
+    color: white;
+    font-size: 16px;
+    transition: 0.4s;
+    line-height: 40px;
+    width: 0px;
+
+}
+
+@media screen and (max-width: 620px) {
+.searchBox:hover > .searchInput {
+    width: 150px;
+    padding: 0 6px;
+}
+}
+
+</style>
+</head>
+
+<body>
+
+   
+  <!--header-->
+
+  <header id="postheader" class="main-header clearfix" role="header" data-scroll>
+    <div class="logo">
+      <a href="#"><img src ="{% static 'assets/images/logoC2.png' %}"  style="width:25%"></a>
+    </div>
+    <a href="#menu" class="menu-link"><i class="fa fa-bars"></i></a>
+    <nav id="menu" class="main-nav" role="navigation">
+      <ul class="main-menu">
+        <li><a href="{% url 'index' %}">Home</a></li>
+        <li><a href="{% url 'hire' %}">채용공고</a></li>
+        <li class="has-submenu"><a href="{% url 'activity' %}">대외활동</a>
+          <ul class="sub-menu">
+            <li><a href="{% url 'activity' %}">대외활동</a></li>
+            <li><a href="{% url 'studyroom' %}" class="external" >스터디모임</a></li>
+          </ul>
+        </li>
+        <li><a href="{% url 'about' %}">About Us</a></li>
+
+      </ul>
+    </nav>
+  </header>
+
+  <!-- ***** Main Banner Area Start ***** -->
+  <section class="section main-banner" id="top" data-section="section1">
+      <video autoplay muted loop id="bg-video">
+           <source src="{% static 'assets/images/logoV.mp4' %}" type="video/mp4" />
+      </video>
+
+      <div class="video-overlay header-text">
+        <!--mouse animation -->
+         <div class="container demo">
+               <div class="content">
+                  <div id="large-header" class="large-header">
+                     <canvas id="demo-canvas"></canvas>
+                  </div>
+               </div>
+            </div>
+
+          <div class="caption">
+              <h6>빅데이터 직무에 관한 모든 것을 알려줄게!</h6>
+              <h2><em>BIGDATA  취업정보</em></h2>
+          </div>
+          </div>
+      </div>
+  </section>
+  <!-- ***** Main Banner Area End ***** -->
+
+
+  <section class="features">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-4 col-12">
+          <div class="features-post">
+            <div class="features-content">
+              <div class="content-show">
+                <h4><i class="fa fa-pencil"></i>BEST 대외활동</h4>
+              </div>
+              <div class="content-hide">
+                <p> 공모전, 취업 박람회, 스터디모임까지 빅데이터의 모든 대외활동을 한눈에 확인해보세요.</p>
+                <div class="scroll-to-section"><a href="#section1">More Info.</a></div>
+            </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-12">
+          <div class="features-post second-features">
+            <div class="features-content">
+              <div class="content-show">
+                <h4><i class="fa fa-graduation-cap"></i>대취타의 Pick 기업공고</h4>
+              </div>
+              <div class="content-hide">
+                <p>수많은 채용공고들 중에서 여러분의 조건에 맞춘 빅데이터직무 + 서울지역의 BEST 기업공고를 확인해보세요</p>
+                <div class="scroll-to-section"><a href="#section2">More Info.</a></div>
+            </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-12">
+          <div class="features-post third-features">
+            <div class="features-content">
+              <div class="content-show">
+                <h4><i class="fa fa-book"></i>관련링크</h4>
+              </div>
+              <div class="content-hide">
+                <p>아직도 빅데이터에 대한 정보를 원한다면 아래의 버튼을 클릭해보세요! 상세하고 넓은 정보들이 모인 곳으로 안내해줄겁니다!</p>
+                <div class="scroll-to-section"><a href="#section3">Read More</a></div>
+            </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <section class="section courses"  id = "section1">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-12">
+            <div class="section-heading">
+              <h2>BEST 대외활동</h2>
+            </div>
+        </div>
+
+        <div class="owl-carousel owl-theme">
+          <div class="item" style = " ">
+            <a href = " https://www.changwon.go.kr/sotong/contest/view.do?mId=0104000000 "><img src="{% static 'assets/images/m_best1.png' %}" onmouseover="this.src='{% static 'assets/images/B11.png' %}'" onmouseout="this.src='{% static 'assets/images/m_best1.png' %}'" alt="Course #1" ></a>
+          </div>
+          <div class="item">
+            <a href = "https://www.water.or.kr/infomation/publication/publicSubscriptionInfo.do?seq=1953&p_group_seq=1846&menu_mode=2# "><img src="{% static '/assets/images/m_best2.png' %}" onmouseover="this.src='{% static 'assets/images/B22.png' %}'" onmouseout="this.src='{% static 'assets/images/m_best2.png' %}'" alt="Course #2"></a>
+          </div>
+          <div class="item">
+            <a href = "https://foodsafetykorea.go.kr/portal/board/boardDetail.do?&menu_no=2914&menu_grp=MENU_NEW07&ntctxt_no=1084749&bbs_no=NOTICE01"><img src="{% static '/assets/images/m_best3.png' %}" onmouseover="this.src='{% static 'assets/images/B33.png' %}'" onmouseout="this.src='{% static 'assets/images/m_best3.png' %}'"alt="Course #3"></a>
+
+          </div>
+          <div class="item">
+            <a href = "http://www.busanit.or.kr/board/view.asp?bidx=11488&bcode=notice&ipage=1&sword=&search_txt="> <img src="{% static '/assets/images/m_best4.png' %}" onmouseover="this.src='{% static 'assets/images/B44.png' %}'" onmouseout="this.src='{% static 'assets/images/m_best4.png' %}'" alt="Course #4"></a>
+          </div>
+          <div class="item">
+            <a href = "http://www.ictfestival.or.kr/ "><img src="{% static '/assets/images/m_best5.png' %}" onmouseover="this.src='{% static 'assets/images/B55.png' %}'" onmouseout="this.src='{% static 'assets/images/m_best5.png' %}'" alt=""></a>
+          </div>
+        </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section courses"  id = "section2">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-12">
+          <div class="section-heading">
+            <h2>대취타가 추천하는 기업공고</h2>
+          </div>
+      </div>
+       <div class="owl-carousel owl-theme">
+        <div class="item" style = " ">
+          <a href = "https://sk.wd3.myworkdayjobs.com/en-US/SKCC_EX_CAREER/job/Bundang/XMLNAME----Data-platform---_SKCC-JR-00000043 " target="_blank">
+            <img style="border:2px solid #11151a;" src="{% static '/assets/images/r_sk.png' %}" onmouseover="this.src='{% static 'assets/images/l_sk.png' %}'" onmouseout="this.src='{% static 'assets/images/r_sk.png' %}'" alt="Course #2"></a>
+        </div>
+
+        <div class="item">
+          <a href = "https://hyundai-autoever.recruiter.co.kr/app/jobnotice/view?systemKindCode=MRS2&jobnoticeSn=62662" target="_blank">
+            <img style="border:2px solid #11151a;" src="{% static '/assets/images/r_hyundai.png' %}" onmouseover="this.src='{% static 'assets/images/l_hy.png' %}'" onmouseout="this.src='{% static 'assets/images/r_hyundai.png' %}'"alt="Course #3"></a>
+        </div>
+
+        <div class="item">
+          <a href = "https://apply.lg.com/app/job/RetrieveJobNotices.rpi" target="_blank">
+            <img style="border:2px solid #11151a;" src="{% static '/assets/images/r_lg.png' %}" onmouseover="this.src='{% static 'assets/images/l_lg.png' %}'" onmouseout="this.src='{% static 'assets/images/r_lg.png' %}'" alt="Course #4"></a>
+        </div>
+
+        <div class="item">
+          <a href = "https://career.woowahan.com/recruitment/R2108004/detail?keyword=%EB%B9%85%EB%8D%B0%EC%9D%B4%ED%84%B0&category=jobGroupCodes%3ABA005001" target="_blank">
+            <img style="border:2px solid #11151a;" src="{% static '/assets/images/r_ba.png' %}" onmouseover="this.src='{% static 'assets/images/l_ba.png' %}'" onmouseout="this.src='{% static 'assets/images/r_ba.png' %}'" alt=""></a>
+        </div>
+
+         <div class="item" style = " ">
+          <a href = " https://kr.tmaxsoft.com/recruit/recruitNotice.do " target="_blank">
+            <img style="border:2px solid #11151a;" src="{% static 'assets/images/r_tmax.png' %}" onmouseover="this.src='{% static 'assets/images/l_tmax.png' %}'" onmouseout="this.src='{% static 'assets/images/r_tmax.png' %}'" alt="Course #1" ></a>
+        </div>
+
+        <div class="item">
+          <a href = "https://www.jobkorea.co.kr/Recruit/GI_Read/35534671?Oem_Code=C1" target="_blank">
+            <img style="border:2px solid #11151a;" src="{% static '/assets/images/r_job.png' %}" onmouseover="this.src='{% static 'assets/images/l_job.png' %}'" onmouseout="this.src='{% static 'assets/images/r_job.png' %}'" alt="Course #2"></a>
+        </div>
+
+        <div class="item">
+          <a href = "https://toss.im/career/job-detail?job_id=4154060003" target="_blank">
+            <img style="border:2px solid #11151a;" src="{% static '/assets/images/r_toss.png' %}" onmouseover="this.src='{% static 'assets/images/l_toss.png' %}'" onmouseout="this.src='{% static 'assets/images/r_toss.png' %}'"alt="Course #3"></a>
+        </div>
+
+        <div class="item" >
+          <a href = " https://apply.lg.com/app/job/RetrieveJobNotices.rpi " target="_blank">
+            <img style="border: 2px solid #11151a;" src="{% static 'assets/images/r_biz.png' %}" onmouseover="this.src='{% static 'assets/images/l_biz.png' %}'"
+                 onmouseout="this.src='{% static 'assets/images/r_biz.png' %}'" alt="Course #1" ></a>
+        </div>
+
+         <div class="item">
+          <a href = "https://bgf.recruiter.co.kr/app/jobnotice/view?systemKindCode=MRS2&jobnoticeSn=66602" target="_blank">
+            <img style="border:2px solid #11151a;" src="{% static '/assets/images/r_bgf.png' %}" onmouseover="this.src='{% static 'assets/images/l_bgf.png' %}'" onmouseout="this.src='{% static 'assets/images/r_bgf.png' %}'"alt="Course #3"></a>
+        </div>
+
+         <div class="item">
+          <a href = "https://www.jobkorea.co.kr/Recruit/GI_Read/35518878?rPageCode=SL" target="_blank">
+            <img style="border:2px solid #11151a;" src="{% static '/assets/images/r_da.png' %}" onmouseover="this.src='{% static 'assets/images/l_da.png' %}'" onmouseout="this.src='{% static 'assets/images//r_da.png' %}'"alt="Course #3"></a>
+        </div>
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+
+  <section class="section video" data-section="section3" id = "section3">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 align-self-center">
+          <div class="left-content">
+            <h4>취업에 도움이 되는<br> <em>취업 지원 사이트</em></h4>
+            <p>취업을 준비하면서 다양한 지원을 받아보세요!<br> 관심있는 분야의 사이트에서 자세한 정보를 확인하세요 :)</p>
+          </div>
+        </div>
+        <div class="col-md-6">
+            <section class="content">
+				<nav class="menu menu--ama">
+					<a class="menu__item" href="https://youth.seoul.go.kr/site/main/content/unemp_emp_incentives_intro" target="_blank">
+						<span class="menu__item-name">Subsidy</span>
+					</a>
+					<a class="menu__item" href="https://youth.seoul.go.kr/site/main/content/job_wing_service" target="_blank">
+						<span class="menu__item-name">Rental</span>
+					</a>
+					<a class="menu__item" href="https://www.jobaba.net/interview/mainList.do" target="_blank">
+						<span class="menu__item-name">Consulting</span>
+					</a>
+					<a class="menu__item" href="https://youth.seoul.go.kr/site/main/youth/politics/user/list" target="_blank">
+						<span class="menu__item-name">recommendation</span>
+					</a>
+				</nav>
+           </section>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+             <p><i class="fa fa-copyright"></i> Copyright 2021 by BIGTOPIA | <a href="#" rel="sponsored" target="_parent">DAECHWITA</a></p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <script src="{% static 'assets/js/isotope.min.js' %}"></script>
+    <script src="{% static 'assets/js/owl-carousel.js' %}"></script>
+    <script src="{% static 'assets/js/lightbox.js' %}"></script>
+    <script src="{% static 'assets/js/tabs.js' %}"></script>
+    <script src="{% static 'assets/js/video.js' %}"></script>
+    <script src="{% static 'assets/js/slick-slider.js' %}"></script>
+    <script src="{% static 'assets/js/custom.js' %}"></script>
+
+<script src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/499416/TweenLite.min.js'></script>
+<script src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/499416/EasePack.min.js'></script>
+<script src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/499416/demo.js'></script>
+<script>$(window).scroll(function(event){
+
+  var yOffset = window.pageYOffset;
+  var breakpoint = 50;
+  if (yOffset > breakpoint){
+    $("header").addClass('active');
+  }else{
+    $("header").removeClass('active');
+  }
+
+});
+</script>
+<!-- link안내 menu script -->
+<script src="{% static 'assetsH/js/charming.min.js' %}"></script>
+<script src="{% static 'assetsH/js/anime.min.js' %}"></script>
+<script src="{% static 'assetsH/js/demo.js' %}"></script>
+<script src="{% static 'assetsH/js/demo-ama.js' %}"></script>
+
+        </div>
+      </div>
+    </div>
+  </section>
+</body>
+</html>

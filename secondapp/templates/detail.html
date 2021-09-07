@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  {%load static%}
+    <meta charset="UTF-8">
+    <title>게시판</title>
+    <link href="{% static 'vendorY/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+        <!-- Bootstrap core CSS -->
+    <link href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+    <!-- Additional CSS Files -->
+    <link rel="stylesheet" href="{% static 'assets/css/fontawesome.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/templatemo-grad-school.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/owl.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/lightbox.css' %}">
+
+<style>
+    .detailbanner {
+    padding-top: 10%;
+    padding-bottom: 2%;
+    text-align: center;
+    background-color: white;
+    color: white;
+}
+
+@font-face {
+font-family: 'BMHANNAPro';
+src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_seven@1.0/BMHANNAPro.woff') format('woff');
+font-weight: normal;
+font-style: normal;
+}
+#postheader {
+    background-color : white;
+    }
+#postul a {
+    color:black;
+}
+
+#postsubul  a:hover{
+    color: red;
+    font-weight: 600;
+    margin-top : 0;
+}
+
+body {
+    margin-top:10% ;
+    }
+.postbanner {
+    padding-bottom: 5%;
+    text-align: center;
+}
+</style>
+</head>
+  <!--header-->
+
+
+  <header id = "postheader" class="main-header clearfix" role="header" data-scroll>
+    <div class="logo">
+      <a href="{% url 'index' %}"><img src ="{% static 'assets/images/logo4.png' %}"  style="width:25%"></a>
+    </div>
+    <a href="#menu" class="menu-link"><i class="fa fa-bars"></i></a>
+    <nav id="menu" class="main-nav" role="navigation">
+      <ul id = "postul" class="main-menu" >
+        <li><a href="{% url 'index' %}">Home</a></li>
+        <li><a href="{% url 'hire' %}">채용공고</a></li>
+        <li class="has-submenu"><a href="{% url 'activity' %}">대외활동</a>
+          <ul id = "postsubul" class="sub-menu">
+            <li style="margin-bottm:0;"><a href="{% url 'activity' %}">대외활동</a></li>
+            <li><a href="{% url 'studyroom' %}" class="external" >스터디모임</a></li>
+          </ul>
+        </li>
+        <li><a href="{% url 'about' %}">About Us</a></li>
+
+      </ul>
+    </nav>
+  </header>
+
+    <!--각 페이지 배너 -->
+    <div class="postbanner">
+      <img src = "{% static 'assetsY/images/Ab1.png' %}" style="width : 500px ">
+    </div>
+
+<body><div class="container">
+    <table class="table">
+        <thead class="thead-light">
+        <tr class="text-center">
+            <th>작성자</th>
+            <th>제목</th>
+            <th>작성일시</th>
+        </tr>
+        <tr class="text-center">
+            <td style="border : 1px solid #E9ECEF">{{ board.author }}</td>
+            <td style="border : 1px solid #E9ECEF">{{ board.title }}</td>
+            <td style="border : 1px solid #E9ECEF">{{ board.created_date | date:"Y-m-d h:i" }}</td>
+        </tr>
+       </thead>
+      <tbody>
+      <td class="text-center" style="vertical-align:middle; background-color:#E9ECEF;"><h6 style="font-weight:bolder; color:#495057;">내용</h6></td>
+      <td colspan="2" >
+        <div class="card" >
+          <div class="card-body">
+            <p class="card-text">{{ board.content }}</p>
+          </div>
+         </div>
+      </td>
+      </tbody>
+
+</table>
+    <div class="row">
+        <div class="col-auto mr-auto"></div>
+        <div>
+            <a style =" color: #ffffff; background-color: #20c997; border:none;" class="btn btn-info" href="/secondapp/post/comment/{{ board.id }}"  role="button">댓글</a>
+        </div>
+        <div class="col-auto"></div>
+        <div>
+            <a style =" color: #ffffff; background-color: #17a2b8; border:none;" class="btn btn-info" href="/secondapp/post/update/{{ board.id }}"  role="button">수정</a>
+        </div>
+        <div class="col-auto"></div>
+        <div>
+            <a style="color: #ffffff; background-color: #dc3545; border: none;" class="btn btn-danger" href="/secondapp/post/delete/{{ board.id }}" role="button">삭제</a>
+        </div>
+        <div class="col-auto"></div>
+        <div>
+            <a style =" color: #ffffff; background-color: #11151a; border:none;" class="btn btn-primary" href="/secondapp/activity/" role="button">목록</a>
+        </div>
+    </div>
+    <br>
+    <br>
+    <br>
+    <div class="container">
+        <table class="table">
+        <thead class="thead-ligth">
+        <tr class="text-center">
+            <th><img src="{% static 'assetsY/images/aaa.jpg' %}" width="24px"> 댓글</th>
+        </tr>
+        </thead>
+        <tbody>
+        <td style="vertical-align:middle; background-color:#E9ECEF;">
+                <div class="card">
+                    <div class="card-body" >
+                        {% for comment in comments %}
+                        <span class="card-text" style="font-weight:bold">{{comment.author}} : </span>
+                        <p class="card-text" style="font-weight:bold;color:grey; text-indent:70px; "  >{{comment.content}} <p class align="right" style="line-height:0">{{comment.date}}</p></p>
+                        <div align="right">
+                            <a style ="color: #17a2b8; background-color: #ffffff; border:1; border-color:#17a2b8; font-size:12px;" class="btn btn-info" href="/secondapp/comment/update/{{ comment.id }}"  role="button" >수정</a>
+                            <a style="color: #dc3545; background-color: #ffffff; border:1; border-color:#dc3545; font-size:12px;" class="btn btn-danger" href="/secondapp/comment/delete/{{ comment.id }}" role="button">삭제</a>
+                        </div>
+                        <hr style="color:#E9ECEF">
+                        {% endfor %}
+                    </div>
+                </div>
+        </td>
+        </tbody>
+    </table>
+    </div>
+
+   </div><br><br><br>
+  <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+             <p><i class="fa fa-copyright"></i> Copyright 2021 by BIGTOPIA | <a href="#" rel="sponsored" target="_parent">DAECHWITA</a></p>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

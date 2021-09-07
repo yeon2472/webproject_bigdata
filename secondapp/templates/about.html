@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+  <title>About Us</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="{% static 'assetsN/css/main.css' %}">
+    <!-- about -->
+    <!-- Feather Icons -->
+	<link rel="stylesheet" type="text/css" href="{% static 'assetsA/fonts/feather/style.css' %}">
+	<!-- General demo styles & header -->
+	<link rel="stylesheet" type="text/css" href="{% static 'assetsA/css/demo.css' %}" />
+	<!-- Component styles -->
+	<link rel="stylesheet" type="text/css" href="{% static 'assetsA/css/component.css' %}" />
+	<script src="{% static 'assetsA/js/modernizr.custom.js' %}"></script>
+    <!-- Additional CSS Files -->
+    <link rel="stylesheet" href="{% static 'assets/css/fontawesome.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/templatemo-grad-school.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/owl.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/lightbox.css' %}">
+
+</head>
+<body>
+
+<!-- Main container -->
+<div class="container">
+		 <!--header -->
+		 <header class="main-header clearfix" role="header" data-scroll>
+    <div class="logo">
+      <a href="{% url 'index' %}"><img src ="{% static 'assets/images/logoC2.png' %}"  style="width:25%; margin-top: 21.5px;"></a>
+    </div>
+    <a href="#menu" class="menu-link"><i class="fa fa-bars"></i></a>
+    <nav id="menu" class="main-nav" role="navigation">
+      <ul class="main-menu">
+        <li><a href="{% url 'index' %}">Home</a></li>
+        <li><a href="{% url 'hire' %}">채용공고</a></li>
+        <li class="has-submenu"><a href="{% url 'activity' %}">대외활동</a>
+          <ul class="sub-menu">
+            <li><a href="{% url 'activity' %}">대외활동</a></li>
+            <li><a href="{% url 'studyroom' %}" class="external" >스터디모임</a></li>
+          </ul>
+        </li>
+        <li><a href="{% url 'about' %}">About Us</a></li>
+      </ul>
+    </nav>
+  </header>
+
+
+		<!-- main -->
+		<section class="slider">
+            <div class="slide slide--current" data-content="content-1">
+				<div class="slide__mover">
+                  <div class="zoomer flex-center">
+                      <video autoplay muted loop id="bg-video-A">
+                          <source src="{% static 'assets/images/logoV2.mp4' %}" type="video/mp4" />
+                      </video>
+                      <h2 class="slide__title"><span>대취타가 궁금하다면</span> <button class="button button--zoom">CLICK</button></h2>
+                      <div class="preview">
+                          <div class="zoomer__area zoomer__area--size-2">
+
+                          </div>
+                      </div>
+                  </div>
+				</div>
+           </div>
+
+
+			<nav class="slider__nav">
+				<!--<button class="button button--nav-prev"><i class="icon icon--arrow-left"></i><span class="text-hidden">Previous product</span></button>
+				<button class="button button--zoom"><i class="icon icon--zoom"></i><span class="text-hidden">View details</span></button>
+				<button class="button button--nav-next"><i class="icon icon--arrow-right"></i><span class="text-hidden">Next product</span></button>
+		-->	</nav>
+		</section>
+        <!-- main end -->
+
+<!-- 상세/slider start-->
+<section class="content">
+
+  <div class="perspective effect-rotate-left">
+    <div class="container"><div class="outer-nav--return"></div>
+      <div id="viewport" class="l-viewport">
+        <div class="l-wrapper">
+            <a style=" width: 40px; position: absolute; margin-left: 90%;  margin-top: 5%; z-index:100;" href = "{% url 'aboutX' %}">
+              <img  src="{% static 'assets/images/Cclose.png' %}" style=" width: 40px; position: absolute; margin-left: 90%;  margin-top: 5%;" >
+          </a>
+          <nav class="l-side-nav">
+            <ul class="side-nav">
+              <li class="is-active"><span>WEB</span></li>
+              <li><span>TEAM</span></li>
+            </ul>
+          </nav>
+
+        <ul class="l-main-content main-content">
+          <!-- 1번 -->
+          <li class="l-section section section--is-active">
+                <div class="intro">
+                      <div class="intro--banner">
+                        <h1>오직,<br>빅데이터반을 위한<br>정보제공 서비스</h1>
+
+                        <img src="{% static 'assetsN/img/introduction-visual.png' %}" alt="Welcome">
+                        <h3>관심있는 기업의 채용정보와 공모전 그리고 스터디 모임까지!</h3>
+                        <p> &nbsp;대취타는 빅데이터관련 직무로 취업을 바라보는 빅데이터반 여러분들을 위한 취업정보를 제공합니다. 바다와 같은 많은 취업정보들 속에서 빅데이터직무만 찾기는 번거로운 단계가 필수였죠. 이를 위해 대취타는 빅데이터 정보만 제공합니다! <br><br> &nbsp; 관심있던 기업부터 내가 몰랐던 빅데이터직무를 필요로 하는 기업까지 다양한 정보를 얻어보세요. 대취타를 통하여 여러 정보를 얻고 원하는 기업에 한 발 더 다가가세요.</p>
+                      </div>
+                     <div class="about--options">
+                          <a href="{% url 'hire' %}" target="_blank"><h3>채용공고</h3></a>
+                          <a href="{% url 'activity' %}" target="_blank"><h3>대외활동</h3></a>
+                          <a href="{% url 'studyroom' %}" target="_blank"><h3>스터디모임</h3></a>
+                     </div>
+                </div>
+
+          </li>
+
+          <!--3번-->
+           <li class="l-section section">
+             <div class="about">
+                <div class="about--banner">
+                    <h2>WE<br>ARE<br><span style="color: white;">BIGTOPIA</span></h2>
+                    <h3 style = "    border-top: 4px solid white; width: 30px; margin-top: -5px; margin-left: 460px;"> </h3>
+                  <h3 style="margin-top:30px; margin-bottom: 5px; color: #cec580;">우리를 소개합니다!</h3>
+               <p class = "aboutP"> &nbsp; 이 홈페이지를 만든 저희는 BIGTOPIA입니다. 프로젝트 아이디어를 생각하며 같은 수업을 듣는 빅데이터 학생으로서 모두에게 유익한 정보를 제공하면 어떨까 생각하게 되었고, 모두의 꿈인 빅데이터 직무로의 취업과 관련된 정보를 제공하고자 하였습니다.<br><br>&nbsp; 이 웹페이지의 정보를 보고 모두 힘내서 좋은 기회와 경험을 얻고 취업의 목표를 이루었으면 좋겠습니다 :)</p>
+                  <img src="{% static 'assets/images/face_final.png' %}" alt="About Us">
+                </div>
+            </div>
+          </li>
+
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+</div>
+
+
+<!-- js -->
+<script src="{% static 'assetsA/js/classie.js' %}"></script>
+<script src="{% static 'assetsA/js/dynamics.min.js' %}"></script>
+<script src="{% static 'assetsA/js/main.js' %}"></script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<!-- <script>window.jQuery || document.write('<script src="{% static 'assetsN/js/vendor/jquery-2.2.4.min.js' %}"><\/script>')</script> -->
+<script src="{% static 'assetsN/js/functions-min.js' %}"></script>
+
+
+</body>
+</html>
